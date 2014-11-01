@@ -1,6 +1,6 @@
 #RobustArrayNew
-    To detect the dynamic array outside access (read / write both) that was allocated by new
-    paburica(paburica@gmail.com)
+To detect the dynamic array outside access (read / write both) that was allocated by new  
+paburica(paburica@gmail.com)
 
 
 ##How to use
