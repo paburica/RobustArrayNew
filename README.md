@@ -46,7 +46,7 @@
 - RobustArrayNew
 	- RobustArrayNew.h and sample project
 
-## Operation verification environment
+## Operation environment
 - Visual Studio 2008/2010/2013
 
 ## Precaution
