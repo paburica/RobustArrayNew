@@ -1,11 +1,6 @@
 //------------------------------------------------------------------------------------
 // Summary        ：RobustArrayNew.hの動作サンプル
 // 
-// History        ：
-//                  2014/11/02 FileVer 1.0.0.0      新規作成       paburica(paburica@gmail.com)
-//                  ◇この行の上に履歴を追加します◇
-//                  履歴の追加はAddNewHistoryか、コピー&ペーストで行って下さい。
-// 
 //                  The MIT License (MIT)
 // 
 //                  Copyright (C) 2014, paburica.
@@ -28,6 +23,11 @@
 //                  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //                  THE SOFTWARE.
 // 
+// 
+// History        ：
+//                  2014/11/02 FileVer 1.0.0.0      新規作成       paburica(paburica@gmail.com)
+//                  ◇この行の上に履歴を追加します◇
+//                  履歴の追加はAddNewHistoryか、コピー&ペーストで行って下さい。
 // 
 // Remarks        ：
 //   RobustArrayNew.hを使用すると、newで確保した動的配列をオーバーしてアクセス（読み取りでも）すると例外が発生します。
