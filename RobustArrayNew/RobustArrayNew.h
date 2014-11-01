@@ -113,7 +113,7 @@ void* operator new[](size_t size)
 			}
 			else
 			{
-				return (char*)pBase + paddingSize + RobustArrayNew::sizeAllocSize;
+				return reinterpret_cast<char*>(pBase) + paddingSize + RobustArrayNew::sizeAllocSize;
 			}
 		}
 		
