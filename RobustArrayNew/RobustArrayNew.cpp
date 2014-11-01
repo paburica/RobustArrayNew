@@ -98,9 +98,9 @@ int _tmain(int /*argc*/, _TCHAR* /*argv[]*/)
 	}
 
 	// 配列外アクセス（書き込み）
-	// crtdbgで発見できます
-	// debugview.exeか標準エラー出力でソースと行番号が確認できます
-	// 場合によっては例外が発生するため、そのままJust-In-Timeデバッグで該当コードに飛べます
+	// RobustArrayNew, crtdbgで発見できます
+	// RobustArrayNewの場合は、例外が発生するため、そのままJust - In - Timeデバッグで該当コードに飛べます
+	// crtdbgの場合は、debugview.exeか標準エラー出力でソースと行番号が確認できます
 	{
 		std::cout << "@write overrun test start..." << std::endl;
 		const size_t size = 10;
