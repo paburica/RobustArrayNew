@@ -50,6 +50,8 @@
 - Visual Studio 2008/2010/2013
 
 ## Precaution
+- RobustArrayNew is only used for bug investigation because it is very inefficient and dangerous
+- It should not be product environment
 - Can't detect static array outside access
 
 ## License
