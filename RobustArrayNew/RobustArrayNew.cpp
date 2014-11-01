@@ -43,6 +43,7 @@
 
 
 // エントリポイント（main, _tmain, WinMain, dllmain, etc...）のあるソースに以下のマクロを定義します
+// プロジェクト内に#define new DEBUG_NEWがある場合は、削除してください
 #ifdef _DEBUG
 #ifdef ENABLED_ROBUST_ARRAY_NEW
 	#include "RobustArrayNew.h"		
