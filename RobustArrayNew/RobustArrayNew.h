@@ -81,8 +81,8 @@ void* operator new[](size_t size)
 	const size_t controlSize = RobustArrayNew::sizeAllocSize + size;
 	const size_t paddingSize = (controlSize >= RobustArrayNew::pageSize)? RobustArrayNew::pageSize - (controlSize % RobustArrayNew::pageSize) : RobustArrayNew::pageSize - controlSize;
 	const size_t realSize = paddingSize + controlSize + RobustArrayNew::guardAllocSize;
-	std::cout << "size = " << std::dec << size << ", 0x" << std::hex << size << std::endl;
-	std::cout << "realSize = " << std::dec << realSize << ", 0x" << std::hex << realSize << std::endl;
+	//std::cout << "size = " << std::dec << size << ", 0x" << std::hex << size << std::endl;
+	//std::cout << "realSize = " << std::dec << realSize << ", 0x" << std::hex << realSize << std::endl;
 	
 #pragma warning(push)
 #pragma warning(disable : 4127)
@@ -97,7 +97,7 @@ void* operator new[](size_t size)
 		}
 		else
 		{
-			std::cout << "success VirtualAlloc = " << std::hex << pBase << std::endl;
+			//std::cout << "success VirtualAlloc = " << std::hex << pBase << std::endl;
 			
 			// サイズ領域にサイズを記録
 			// VirtualFreeはページ単位で解放するので、このサイズには詰め物領域を含めない
@@ -142,7 +142,7 @@ void operator delete[](void* po)
 {
 	if (po != NULL)
 	{
-		std::cout << "delete address = " << std::hex << po << std::endl;
+		//std::cout << "delete address = " << std::hex << po << std::endl;
 
 		// サイズを取得
 		size_t controlSize = 0;
