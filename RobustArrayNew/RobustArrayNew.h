@@ -46,9 +46,9 @@
 
 
 namespace RobustArrayNew{
-const size_t pageSize = 1024 * 4;				///< ページサイズ
-const size_t sizeAllocSize = sizeof(size_t);	///< サイズ領域サイズ
-const size_t guardAllocSize = pageSize;			///< ガード領域サイズ
+	const size_t pageSize = 1024 * 4;				///< ページサイズ
+	const size_t sizeAllocSize = sizeof(size_t);	///< サイズ領域サイズ
+	const size_t guardAllocSize = pageSize;			///< ガード領域サイズ
 };
 
 
@@ -101,14 +101,14 @@ void* operator new[](size_t size)
 			
 			// サイズ領域にサイズを記録
 			// VirtualFreeはページ単位で解放するので、このサイズには詰め物領域を含めない
-			memcpy((char*)pBase + paddingSize, &controlSize, sizeof(controlSize));
+			memcpy((reinterpret_cast<char*>(pBase) + paddingSize), &controlSize, sizeof(controlSize));
 			
 			// 後ろをガード
 			DWORD old = 0;
-			if (::VirtualProtect(((char*)pBase + paddingSize + controlSize),
-				RobustArrayNew::guardAllocSize, PAGE_READONLY | PAGE_GUARD, &old) == 0)
+			if (::VirtualProtect((reinterpret_cast<char*>(pBase) + paddingSize + controlSize),
+				RobustArrayNew::guardAllocSize, (PAGE_READONLY | PAGE_GUARD), &old) == 0)
 			{
-				std::cout << "failed VirtualProtectEx = " << ::GetLastError() << std::endl;
+				std::cout << "failed VirtualProtect = " << ::GetLastError() << std::endl;
 				::VirtualFree(pBase, realSize, MEM_DECOMMIT);
 			}
 			else
@@ -146,11 +146,11 @@ void operator delete[](void* po)
 
 		// サイズを取得
 		size_t controlSize = 0;
-		memcpy(&controlSize, (char*)po - RobustArrayNew::sizeAllocSize, sizeof(controlSize));
+		memcpy(&controlSize, (reinterpret_cast<char*>(po) - RobustArrayNew::sizeAllocSize), sizeof(controlSize));
 
 		// 解放
 		// ページ単位で解放するので、paddingSizeは不要
-		if (::VirtualFree(((char*)po - RobustArrayNew::sizeAllocSize), (controlSize + RobustArrayNew::guardAllocSize), MEM_DECOMMIT) == 0)
+		if (::VirtualFree((reinterpret_cast<char*>(po) - RobustArrayNew::sizeAllocSize), (controlSize + RobustArrayNew::guardAllocSize), MEM_DECOMMIT) == 0)
 		{
 			std::cout << "failed VirtualFree = " << ::GetLastError() << std::endl;
 		}
