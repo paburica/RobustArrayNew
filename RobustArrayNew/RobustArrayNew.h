@@ -1,11 +1,6 @@
 //------------------------------------------------------------------------------------
 // Summary        ：newで確保した動的配列外アクセス（読み取り/書き込みとも）検出
 // 
-// History        ：
-//                  2014/11/02 FileVer 1.0.0.0      新規作成       paburica(paburica@gmail.com)
-//                  ◇この行の上に履歴を追加します◇
-//                  履歴の追加はAddNewHistoryか、コピー&ペーストで行って下さい。
-// 
 //                  The MIT License (MIT)
 // 
 //                  Copyright (C) 2014, paburica.
@@ -27,7 +22,12 @@
 //                  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //                  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //                  THE SOFTWARE.
-// 
+//
+//
+// History        ：
+//                  2014/11/02 FileVer 1.0.0.0      新規作成       paburica(paburica@gmail.com)
+//                  ◇この行の上に履歴を追加します◇
+//                  履歴の追加はAddNewHistoryか、コピー&ペーストで行って下さい。
 // 
 // Remarks        ：
 //   RobustArrayNew.hをincludeすると、newで確保した動的配列外アクセス（読み取り/書き込みとも）により例外が発生します。

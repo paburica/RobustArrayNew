@@ -1,11 +1,6 @@
 //------------------------------------------------------------------------------------
 // Summary        ：RobustArrayNew.hの動作サンプル
 // 
-// History        ：
-//                  2014/11/02 FileVer 1.0.0.0      新規作成       paburica(paburica@gmail.com)
-//                  ◇この行の上に履歴を追加します◇
-//                  履歴の追加はAddNewHistoryか、コピー&ペーストで行って下さい。
-// 
 //                  The MIT License (MIT)
 // 
 //                  Copyright (C) 2014, paburica.
@@ -29,6 +24,11 @@
 //                  THE SOFTWARE.
 // 
 // 
+// History        ：
+//                  2014/11/02 FileVer 1.0.0.0      新規作成       paburica(paburica@gmail.com)
+//                  ◇この行の上に履歴を追加します◇
+//                  履歴の追加はAddNewHistoryか、コピー&ペーストで行って下さい。
+// 
 // Remarks        ：
 //   RobustArrayNew.hを使用すると、newで確保した動的配列をオーバーしてアクセス（読み取りでも）すると例外が発生します。
 //   そのままデバッグすることで、原因特定が非常に容易となります。
@@ -43,6 +43,7 @@
 
 
 // エントリポイント（main, _tmain, WinMain, dllmain, etc...）のあるソースに以下のマクロを定義します
+// プロジェクト内に#define new DEBUG_NEWがある場合は、削除してください
 #ifdef _DEBUG
 #ifdef ENABLED_ROBUST_ARRAY_NEW
 	#include "RobustArrayNew.h"		
