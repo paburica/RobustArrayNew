@@ -1,19 +1,18 @@
-#RobustArrayNew
-    To detect the dynamic array outside access (read / write both) that was allocated by new
-    paburica(paburica@gmail.com)
+# RobustArrayNew
+- To detect the dynamic array outside access (read / write both) that was allocated by new
+- paburica(paburica@gmail.com)
 
-
-##How to use
+## How to use
 - #include "RobustArrayNew.h" in the source that contains the entry point
 - Debug build and run
 - Exception will occur when the array outside access. And then, Just-In-Time debug
 
-##Supplement
+## Supplement
 - When combined with crtdbg, you can detect the majority of memory problem.
 - However, crtdbg at the same time can not be used
 - For more information open the RobustArrayNew.sln
 
-`
+```C++
 
 	// Is defined in the source code that entry point
 	// If there is a #define new DEBUG_NEW is in the project, please remove
@@ -39,21 +38,21 @@
 		_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 	#endif	// ENABLED_ROBUST_ARRAY_NEW
 	#endif	// _DEBUG
-`
+```
 
-##Directory structure
+## Directory structure
 - .git
 	- .git management files
 - RobustArrayNew
 	- RobustArrayNew.h and sample project
 
-##Operation verification environment
+## Operation verification environment
 - Visual Studio 2008/2010/2013
 
-##Precaution
+## Precaution
 - Can't detect static array outside access
 
-##License
+## License
 The MIT License (MIT)
 
 Copyright (C) 2014, paburica.
